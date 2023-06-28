@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		practice js ceate contdown 
+	</title>
+	<link rel="stylesheet" type="text/css" href="countdown.css">
+
+</head>
+<body>
+	<div class="main">
+		<div class="overlay"> 
+			<h2 class="h" >Comming soon</h2>
+			<h2 class="h" id="end-date">18 june 2024 12:00 Am</h2>
+			<div class="in">
+				<div>
+					<input type="text" name="" readonly>
+					<br>
+					<label>Dayes</label>
+				</div>
+				<div>
+					<input type="text" name="" readonly>
+					
+					<br>
+					<label>Hours</label>
+				</div>
+				<div>
+					<input type="text" name="" readonly>
+					<br>
+					<label>Minutes</label>
+				</div>
+				<div>
+					<input type="text" name="" readonly>
+				<br>
+					<label>Second</label>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" >
+      const endDate="18 june 2024 12:00 Am"
+	  document.getElementById("end-date").innerHTML=endDate
+	  const input=document.getElementsByTagName("input")
+
+	  // create function
+      function clock(){
+		const end=new Date(endDate)
+		const now = new Date()
+		const diff=(end - now)/1000;
+		console.log(diff)
+		// console.log(end)
+		// console.log(new)
+		// convert to days
+		input[0].value=(Math.floor(diff/3600 /24));
+		input[1].value=(Math.floor(diff/3600)%24);
+		input[2].value=(Math.floor(diff/60)%60);
+		input[3].value=(Math.floor(diff)%60);
+		
+
+
+	  }
+	setInterval(() => {
+		clock()
+	  }, 1000);
+	  
+
+	  clock();
+	</script>
+
+</body>
+</html>
